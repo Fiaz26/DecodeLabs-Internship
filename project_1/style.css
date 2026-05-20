@@ -1,1 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Open+Sans:wght@400;600&display=swap');
 
+:root {
+    --mocha: #A58B6F;
+    --blue: #ADD8E6;
+    --grey: #F2F0EA;
+    --white: #ffffff;
+    --dark: #2d2d2d;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    background-color: #fafafa;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.decode-final-project {
+    max-width: 1100px;
+    width: 100%;
+    font-family: 'Open Sans', sans-serif;
+    background: var(--grey);
+    padding: 30px;
+    border-radius: 24px;
+    color: var(--dark);
+    transition: filter 0.5s ease;
+}
+
+.progress-container {
+    background: rgba(255,255,255,0.6);
+    padding: 12px 20px;
+    border-radius: 50px;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border: 1px solid #ddd;
+}
+
+.phase-label, .percent-label { font-size: 0.75rem; font-weight: 800; color: var(--mocha); }
+.bar-bg { flex-grow: 1; height: 10px; background: #e0e0e0; border-radius: 10px; overflow: hidden; }
+.bar-fill { width: 65%; height: 100%; background: var(--mocha); }
+
+.project-hero { text-align: center; margin-bottom: 40px; }
+.project-hero h1 { 
+    font-family: 'Montserrat', sans-serif; 
+    color: var(--mocha); 
+    font-size: clamp(1.8rem, 5vw, 2.8rem);
+}
+
+.toolkit-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+.tool-tag {
+    background: var(--white);
+    padding: 12px;
+    border-radius: 12px;
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: 700;
+    border: 1px solid #eee;
+}
+
+.main-stack { display: grid; grid-template-columns: 1fr; gap: 20px; }
+.feature-card {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+.feature-card:hover { transform: translateY(-8px); }
+.feature-card::before { content: ''; position: absolute; top: 0; left: 0; width: 6px; height: 100%; background: var(--mocha); }
+
+.pillar-tag { color: var(--mocha); font-size: 0.7rem; margin-bottom: 8px; font-weight: 800; }
+
+.action-zone { text-align: center; margin-top: 40px; }
+.submit-btn {
+    width: 100%; max-width: 320px;
+    background: var(--mocha); color: white;
+    padding: 18px; border: none; border-radius: 12px;
+    font-family: 'Montserrat', sans-serif; font-weight: 800;
+    cursor: pointer; text-transform: uppercase;
+}
+.blueprint-btn {
+    display: block; margin: 15px auto; padding: 10px 20px;
+    background: transparent; border: 1px solid var(--mocha);
+    color: var(--mocha); border-radius: 8px; cursor: pointer;
+}
+
+.project-footer { text-align: center; margin-top: 30px; font-size: 0.75rem; opacity: 0.5; }
+
+@media (min-width: 768px) {
+    .main-stack { grid-template-columns: repeat(3, 1fr); }
+}
